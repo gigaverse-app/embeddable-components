@@ -1,0 +1,33 @@
+# Security Context is private info that can be used to customize the embeddable experience.
+# This context is only accessible within Cube models and enables row-level security. Note
+# that this file is only used by the builder.
+# See https://docs.embeddable.com/data-modeling/row-level-security
+- name: All artists
+  securityContext: {}
+  environment: default
+
+- name: Jake Sterling
+  securityContext: {}
+  filters: 
+    - member: 'music_artists.artist_id'
+      operator: 'equals'
+      values: ['ART_00002']
+  environment: default
+
+- name: The Crimson Wolves
+  securityContext: {}
+  filters: 
+    - member: 'music_artists.artist_id'
+      operator: 'equals'
+      values: ['ART_00001']
+  environment: default
+
+- name: Luna Starlight
+  securityContext: {}
+  filters: 
+    - member: 'music_artists.artist_id'
+      operator: 'equals'
+      values: ['ART_00003']
+  environment: default
+
+

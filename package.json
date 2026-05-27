@@ -1,0 +1,38 @@
+{
+  "name": "embeddable.com-boilerplate-repo",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "ct": "tsc --noEmit",
+    "dev": "cross-env NODE_OPTIONS='--max-old-space-size=4096' embeddable dev",
+    "embeddable:build": "embeddable build",
+    "embeddable:dev": "cross-env NODE_OPTIONS='--max-old-space-size=4096' embeddable dev --events-file=.embeddable-dev-logs/dev.events.ndjson",
+    "embeddable:login": "embeddable login",
+    "embeddable:push": "embeddable push",
+    "embeddable:upgrade": "bunx npm-check-updates -u \"/embeddable/\"",
+    "reinstall": "rm -rf node_modules bun.lock && bun install",
+    "embedding-preview": "node src/embeddable.com/scripts/embedding-preview.cjs"
+  },
+  "dependencies": {
+    "@embeddable.com/remarkable-pro": "^0.3.1"
+  },
+  "devDependencies": {
+    "@embeddable.com/core": "^2.13.7",
+    "@embeddable.com/react": "^2.13.7",
+    "@embeddable.com/sdk-core": "^4.7.0",
+    "@embeddable.com/sdk-react": "^4.3.10",
+    "@swc/core": "1.13.5",
+    "@types/react": "^19.1.13",
+    "cross-env": "^7.0.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "overrides": {
+    "glob": "^13.0.0",
+    "axios": "1.13.6"
+  }
+}
